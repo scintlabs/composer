@@ -1,27 +1,47 @@
 {
-  "name": "composer",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.4"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
-  }
+    "name": "composer",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "NODE_OPTIONS='--inspect' next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@lexical/code": "^0.29.0",
+        "@lexical/devtools-core": "^0.29.0",
+        "@lexical/hashtag": "^0.29.0",
+        "@lexical/history": "^0.29.0",
+        "@lexical/html": "^0.29.0",
+        "@lexical/link": "^0.29.0",
+        "@lexical/list": "^0.29.0",
+        "@lexical/markdown": "^0.29.0",
+        "@lexical/offset": "^0.29.0",
+        "@lexical/overflow": "^0.29.0",
+        "@lexical/plain-text": "^0.29.0",
+        "@lexical/react": "^0.29.0",
+        "@lexical/rich-text": "^0.29.0",
+        "@lexical/table": "^0.29.0",
+        "@lexical/text": "^0.29.0",
+        "@lexical/utils": "^0.29.0",
+        "@tailwindcss/typography": "^0.5.16",
+        "date-fns": "^4.1.0",
+        "lexical": "^0.29.0",
+        "next": "15.2.4",
+        "phosphor-react": "^1.4.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "typescript": "^5",
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "@tailwindcss/postcss": "^4",
+        "tailwindcss": "^4",
+        "eslint": "^9",
+        "eslint-config-next": "15.2.4",
+        "@eslint/eslintrc": "^3"
+    }
 }
