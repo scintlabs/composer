@@ -5,10 +5,12 @@ import Sidebar from "@/components/Sidebar"
 
 export default function Home() {
     return (
-        <div className="flex flex-row justify-between max-w-screen">
+        <div className="flex h-screen max-w-screen">
             <Sidebar />
-            <ProjectDashboard />
-            <Panels />
+            <div className="relative flex-1">
+                <ProjectDashboard />
+                <Panels className="absolute top-0 right-0 z-10" />
+            </div>
         </div>
     )
 }
