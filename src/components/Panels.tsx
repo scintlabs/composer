@@ -2,6 +2,20 @@
 
 import React from "react"
 
+function hashString(str: string) {
+    let hash = 0
+    for (let i = 0; i < str.length; i++) {
+        hash = (hash << 5) - hash + str.charCodeAt(i)
+        hash |= 0 // Convert to 32bit integer
+    }
+    return hash
+}
+
+function seededRandom(seed: number) {
+    const x = Math.sin(seed) * 10000
+    return x - Math.floor(x)
+}
+
 interface Task {
     id: string
     type: "development" | "research" | "writing" | "analysis" | "data"
@@ -272,7 +286,13 @@ const TaskPanel: React.FC<{ task: Task }> = ({ task }) => {
                                                   : "bg-rose-400/70"
                                     }`}
                                     style={{
-                                        height: `${Math.max(15, Math.min(100, Math.random() * 100))}%`,
+                                        height: `${Math.max(
+                                            15,
+                                            Math.min(
+                                                100,
+                                                seededRandom(hashString(task.id) + i) * 100,
+                                            ),
+                                        )}%`,
                                         opacity:
                                             i > 8 && task.status === "paused"
                                                 ? 0.3
@@ -323,7 +343,7 @@ export default function Panels() {
                         key={task.id}
                         className="relative"
                         style={{
-                            animation: `float ${2 + Math.random() * 2}s ease-in-out infinite alternate`,
+                            animation: `float ${2 + seededRandom(hashString(task.id)) * 2}s ease-in-out infinite alternate`,
                         }}
                     >
                         <TaskPanel task={task} />
