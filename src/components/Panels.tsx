@@ -334,9 +334,9 @@ const TaskPanel: React.FC<{ task: Task }> = ({ task }) => {
     )
 }
 
-export default function Panels() {
+export default function Panels({ className = "" }: { className?: string }) {
     return (
-        <div className="flex flex-col h-screen max-w-fit text-neutral-300/70 relative overflow-hidden w-80">
+        <div className={`flex flex-col h-screen max-w-fit text-neutral-300/70 relative overflow-hidden w-80 ${className}`}>
             <div className="w-96 px-2 space-y-6 overflow-y-scroll">
                 {tasks.map((task) => (
                     <div

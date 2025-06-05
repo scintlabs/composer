@@ -110,6 +110,27 @@ const ProjectDashboard: React.FC = () => {
                     <Background />
                     <MiniMap />
                     <Controls />
+                    <style jsx global>{`
+                        .react-flow__controls {
+                            background-color: #2a2a2a;
+                            border: 1px solid #444;
+                            box-shadow: none;
+                        }
+                        .react-flow__controls-button {
+                            background: #3b3b3b;
+                            border-bottom: 1px solid #555;
+                            color: #eee;
+                        }
+                        .react-flow__controls-button:hover {
+                            background: #4b4b4b;
+                        }
+                        .react-flow__controls-button svg {
+                            fill: #eee;
+                        }
+                        .react-flow__minimap {
+                            background-color: #2a2a2a;
+                        }
+                    `}</style>
                 </ReactFlow>
             </div>
         </div>
